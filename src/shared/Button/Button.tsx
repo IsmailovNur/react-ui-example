@@ -1,11 +1,11 @@
-import type { FC, ReactNode } from "react";
+import type { FC, MouseEventHandler, ReactNode } from "react";
 
 type ButtonType = "submit" | "reset" | "button" | undefined;
 
 interface ButtonProps extends React.PropsWithChildren {
   children?: ReactNode;
   className?: string;
-  clickHandler?: () => void;
+  clickHandler?: MouseEventHandler;
   type?: ButtonType;
 }
 

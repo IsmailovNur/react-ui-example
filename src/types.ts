@@ -3,3 +3,5 @@ export interface ModalButtonType {
   label: string;
   onClick: () => void;
 }
+
+export type AlertType = 'primary' | 'success' | 'danger' | 'warning';

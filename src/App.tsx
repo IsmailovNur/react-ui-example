@@ -2,10 +2,12 @@ import './App.css'
 import Modal from "./shared/Modal/Modal.tsx";
 import { useState } from "react";
 import type { ModalButtonType } from "./types.ts";
+import Alert from "./shared/Alert/Alert.tsx";
 
 const App = () => {
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(true);
 
   const modalButtons: ModalButtonType[] = [
     {
@@ -32,22 +34,26 @@ const App = () => {
     }
   ];
 
+
   return (
-    <div className="container">
-      <div className="App">
-        <Modal
-          show={showModal}
-          title={"Modal"}
-          onClose={() => setShowModal(false)}
-          buttons={modalButtons}
-        >
-          <h1>Custom Modal</h1>
-        </Modal>
+    <div className="App">
+      <Modal
+        show={showModal}
+        title={"Modal"}
+        onClose={() => setShowModal(false)}
+        buttons={modalButtons}
+      >
+        <h1>Custom Modal</h1>
+      </Modal>
 
+      {showSuccessAlert && (<Alert
+        type={'success'}
+        clickDismissable
+        onDismiss={() => setShowSuccessAlert(false)}
+      >This is success</Alert>)}
 
-        <div className="buttons">
+      <div className="buttons">
 
-        </div>
       </div>
     </div>
   )
