@@ -1,9 +1,25 @@
+import type { FC, ReactNode } from "react";
 
-const Button = () => {
+type ButtonType = "submit" | "reset" | "button" | undefined;
+
+interface ButtonProps extends React.PropsWithChildren {
+  children?: ReactNode;
+  className?: string;
+  clickHandler?: () => void;
+  type?: ButtonType;
+}
+
+const Button: FC<ButtonProps> = (props) => {
+  const {children, className, clickHandler, type} = props;
+
   return (
-    <div>
-
-    </div>
+    <button
+      type={type}
+      className={`ingredient-btn ${className}`}
+      onClick={clickHandler}
+    >
+      {children}
+    </button>
   );
 };
 
