@@ -8,7 +8,7 @@ const Backdrop: FC<BackdropProps> = ({show}: BackdropProps) => {
   return (
     <div
       className="modal-backdrop show"
-      style={{display: show ? 'block' : 'nonef'}}
+      style={{display: show ? 'block' : 'none'}}
     />
   );
 };

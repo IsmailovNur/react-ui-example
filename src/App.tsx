@@ -1,4 +1,4 @@
-import './App.css'
+import './App.css';
 import Modal from "./shared/Modal/Modal.tsx";
 import { useState } from "react";
 import type { ModalButtonType } from "./types.ts";
