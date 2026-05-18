@@ -1,8 +1,13 @@
-import type { FC, MouseEventHandler, ReactNode } from "react";
+import type {
+  FC,
+  MouseEventHandler,
+  PropsWithChildren,
+  ReactNode
+} from "react";
 
 type ButtonType = "submit" | "reset" | "button" | undefined;
 
-interface ButtonProps extends React.PropsWithChildren {
+interface ButtonProps extends PropsWithChildren {
   children?: ReactNode;
   className?: string;
   clickHandler?: MouseEventHandler;
@@ -15,7 +20,7 @@ const Button: FC<ButtonProps> = (props) => {
   return (
     <button
       type={type}
-      className={`ingredient-btn ${className}`}
+      className={`btn ${className}`}
       onClick={clickHandler}
     >
       {children}
